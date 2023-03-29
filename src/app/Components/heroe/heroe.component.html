@@ -1,0 +1,21 @@
+
+<div class="card m-5 mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [src]="heroe.img" class="img-fluid rounded-start" [alt]="heroe.img">
+        <div>
+            <img *ngIf="heroe.casa =='Marvel'" class="img-logo ms-2"  src="assets/img/Marvel.png"  style="width: 90%;">
+            <img *ngIf="heroe.casa =='DC'" class="img-logo ms-2" src="assets/img/DC.png"  style="width: 90%;">
+          </div>
+      </div>
+  
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{heroe.nombre |  uppercase }} - <small>{{heroe.casa}}</small></h5>
+          <p class="card-text">{{heroe.bio}}</p>
+          <p class="card-text"><small class="text-muted">{{heroe.aparicion| date:'y'}}</small></p>
+        </div>
+        <a [routerLink]="[ '/heroes' ]" type="button" class="btn btn-outline-primary btn-block mb-2" style="width: 100%;">Volver</a>
+      </div>
+    </div>
+  </div>
